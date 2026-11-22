@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TP8 - JavaScript et le DOM</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+  </head>
+  <body>
+    <h2>Commande de restaurant</h2>
+    <div class="container">
+      <div class="form-section">
+        <h3>Ma commande</h3>
+
+        <div class="ligne">
+          <label for="entree">Entrée</label>
+          <select id="entree" onchange="mettreAJourPanierGlobal()">
+            <option value="0">-- Choisir --</option>
+            <option value="6">Salade Méchouia (6 DT)</option>
+            <option value="5">Brik à l'oeuf (5 DT)</option>
+            <option value="7">Salade Niçoise (7 DT)</option>
+          </select>
+          <input type="number" id="nbEntree" min="0" value="0" oninput="mettreAJourPanierGlobal()">
+        </div>
+
+        <div class="ligne">
+          <label for="plat">Plat</label>
+          <select id="plat" onchange="mettreAJourPanierGlobal()">
+            <option value="0">-- Choisir --</option>
+            <option value="15">Couscous (15 DT)</option>
+            <option value="12">Pizza (12 DT)</option>
+            <option value="18">Poisson grillé (18 DT)</option>
+          </select>
+          <input type="number" id="nbPlat" min="0" value="0" oninput="mettreAJourPanierGlobal()">
+        </div>
+        <div class="ligne">
+          <label for="dessert">Dessert</label>
+          <select id="dessert" onchange="mettreAJourPanierGlobal()">
+            <option value="0">-- Choisir --</option>
+            <option value="4">Makroudh (4 DT)</option>
+            <option value="5">Glace (5 DT)</option>
+            <option value="6">Tiramisu (6 DT)</option>
+          </select>
+          <input type="number" id="nbDessert" min="0" value="0" oninput="mettreAJourPanierGlobal()">
+        </div>
+      </div>
+      <div class="cart-section">
+        <h3>Mon Panier</h3>
+        <ul id="liste-panier"></ul>
+        <div class="cart-totals">
+          <p><span>Sous-total :</span> <span id="affichage-soustotal">0.00 DT</span></p>
+          <p><span>Frais de livraison :</span> <span id="affichage-livraison">0.00 DT</span></p>
+          <p class="total"><span>Total :</span> <span id="affichage-total">0.00 DT</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
